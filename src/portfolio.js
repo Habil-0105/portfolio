@@ -79,6 +79,8 @@ const skills = [
   'PostgreSQL',
   'Git',
   'CI/CD',
+  'PHP',
+  'Laravel'
 ]
 
 const contact = {
