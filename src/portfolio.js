@@ -71,16 +71,20 @@ const personalProjects = [
 const skills = [
   'Dart',
   'Flutter',
+  'Java',
   'Kotlin',
   'Jetpack Compose',
   'Swift',
   'SwiftUI',
   'Go',
+  'MySQL',
   'PostgreSQL',
   'Git',
   'CI/CD',
   'PHP',
-  'Laravel'
+  'Laravel',
+  'Node.js',
+  'React',
 ]
 
 const contact = {
