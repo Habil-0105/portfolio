@@ -9,7 +9,7 @@ const about = {
   description: 'Software engineer with a Bachelor\'s degree in Informatics Engineering from the Electronic Engineering Polytechnic Institute of Surabaya.\n' +
     'Experienced in mobile and back-end development, specializing in Flutter, Kotlin, and Swift. Skilled in building scalable APIs using Go and\n' +
     'delivering maintainable solutions with agile methodologies. Passionate about innovation and impactful software projects.',
-  resume: 'https://drive.google.com/file/d/1VWPlWVLL1_Nbc09Hz-rNub_Kav8N44W0/view?usp=share_link',
+  resume: 'https://drive.google.com/file/d/1rsFzxefZNB4-fO7ygQC3mUptpPYAC26W/view?usp=share_link',
   social: {
     linkedin: 'https://linkedin.com/in/habil0105/',
     github: 'https://github.com/Habil-0105',
