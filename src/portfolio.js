@@ -9,7 +9,7 @@ const about = {
   description: 'Software engineer with a Bachelor\'s degree in Informatics Engineering from the Electronic Engineering Polytechnic Institute of Surabaya.\n' +
     'Experienced in mobile and back-end development, specializing in Flutter, Kotlin, and Swift. Skilled in building scalable APIs using Go and\n' +
     'delivering maintainable solutions with agile methodologies. Passionate about innovation and impactful software projects.',
-  resume: 'https://drive.google.com/file/d/1rsFzxefZNB4-fO7ygQC3mUptpPYAC26W/view?usp=share_link',
+  resume: 'https://drive.google.com/file/d/1MT3-SdGVg-yCYGfM2t0eX_WmSOubgC6q/view?usp=share_link',
   social: {
     linkedin: 'https://linkedin.com/in/habil0105/',
     github: 'https://github.com/Habil-0105',
@@ -17,6 +17,12 @@ const about = {
 }
 
 const professionalProjects = [
+  {
+    name: 'Wavrd',
+    description: 'A native macOS application designed to help users practice and improve their presentation skills. Built with Swift, the app provides an interactive environment for rehearsing presentations and evaluating performance, helping users become more confident and effective presenters.',
+    stack: ['Swift'],
+    appStore: 'https://testflight.apple.com/join/jPpNrNb7',
+  },
   {
     name: 'Reservation Quest',
     description: 'An app for booking restaurants, spas, events, and etc. Features real-time availability, instant reservations, and reminders. Designed for seamless planning and convenience, showcasing intuitive design and efficient functionality.',
@@ -85,6 +91,12 @@ const skills = [
   'Laravel',
   'Node.js',
   'React',
+  'C#',
+  'Python',
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'TypeScript',
 ]
 
 const contact = {
