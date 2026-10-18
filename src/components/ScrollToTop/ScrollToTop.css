@@ -1,12 +1,27 @@
 .scroll-top {
   position: fixed;
-  bottom: 2em;
-  right: 4em;
-  background-color: transparent;
+  bottom: 28px;
+  right: 28px;
+  z-index: 90;
 }
 
-@media (max-width: 900px) {
-  .scroll-top {
-    display: none;
-  }
+.scroll-top__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--clr-surface);
+  color: var(--clr-fg);
+  border: 1px solid var(--clr-border-strong);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.scroll-top__btn:hover {
+  background-color: var(--clr-accent);
+  border-color: var(--clr-accent);
+  color: var(--clr-accent-contrast);
+  transform: translateY(-2px);
 }

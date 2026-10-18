@@ -1,13 +1,15 @@
 import { useContext } from 'react'
 import { ThemeContext } from './contexts/theme'
 import Header from './components/Header/Header'
+import Hero from './components/Hero/Hero'
+import Projects from './components/Projects/Projects'
+import Experience from './components/Experience/Experience'
+import Capabilities from './components/Capabilities/Capabilities'
 import About from './components/About/About'
-import ProfessionalProjects from './components/ProfessionalProjects/ProfessionalProjects'
-import Skills from './components/Skills/Skills'
-import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import './App.css'
-import PersonalProjects from './components/PersonalProjects/PersonalProjects'
 
 const App = () => {
   const [{ themeName }] = useContext(ThemeContext)
@@ -16,14 +18,16 @@ const App = () => {
     <div id='top' className={`${themeName} app`}>
       <Header />
 
-      <main>
+      <main id='main-content'>
+        <Hero />
+        <Projects />
+        <Experience />
+        <Capabilities />
         <About />
-        <ProfessionalProjects />
-        <PersonalProjects />
-        <Skills />
         <Contact />
       </main>
 
+      <Footer />
       <ScrollToTop />
     </div>
   )

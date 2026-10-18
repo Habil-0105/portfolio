@@ -1,37 +1,97 @@
-.about {
-  flex-direction: column;
-  margin-top: 3em;
+.about-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--clr-border);
 }
 
-.about__name {
-  color: var(--clr-primary);
+.about-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
 }
 
-.about__role {
-  margin-top: 1.2em;
-}
-
-.about__desc {
-  font-size: 1rem;
-  max-width: 600px;
-}
-
-.about__desc,
-.about__contact {
-  margin-top: 2.4em;
-}
-
-.about .link--icon {
-  margin-right: 0.8em;
-}
-
-.about .btn--outline {
-  margin-right: 1em;
-}
-
-@media (max-width: 600px) {
-  .app .about {
-    align-items: flex-start;
-    margin-top: 2em;
+@media (min-width: 880px) {
+  .about-editorial-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 64px;
   }
+}
+
+.about-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-paragraph {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--clr-fg-muted);
+}
+
+.about-paragraph--lead {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--clr-fg);
+  font-weight: 500;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Guiding Principles Card */
+.about-principles {
+  background-color: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .about-principles {
+    padding: 24px 20px;
+  }
+}
+
+.principles-title {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.principle-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.principle-number {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--clr-fg-subtle);
+}
+
+.principle-heading {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--clr-fg);
+}
+
+.principle-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--clr-fg-muted);
 }

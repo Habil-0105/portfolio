@@ -1,75 +1,98 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import Brightness2Icon from '@material-ui/icons/Brightness2'
 import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
+import LaunchIcon from '@material-ui/icons/Launch'
 import { ThemeContext } from '../../contexts/theme'
-import { professionalProjects, skills, contact } from '../../portfolio'
+import { about } from '../../portfolio'
 import './Navbar.css'
 
 const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext)
   const [showNavList, setShowNavList] = useState(false)
 
-  const toggleNavList = () => setShowNavList(!showNavList)
+  const toggleNavList = () => setShowNavList((prev) => !prev)
+  const closeNavList = () => setShowNavList(false)
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && showNavList) {
+        closeNavList()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [showNavList])
 
   return (
-    <nav className='center nav'>
+    <nav className='nav' aria-label='Main navigation'>
       <ul
-        style={{ display: showNavList ? 'flex' : null }}
-        className='nav__list'
+        className={`nav__list ${showNavList ? 'nav__list--open' : ''}`}
+        id='primary-navigation'
       >
-        {professionalProjects.length ? (
-          <li className='nav__list-item'>
+        <li>
+          <a href='#work' onClick={closeNavList} className='nav__link'>
+            Selected Work
+          </a>
+        </li>
+        <li>
+          <a href='#experience' onClick={closeNavList} className='nav__link'>
+            Experience
+          </a>
+        </li>
+        <li>
+          <a href='#capabilities' onClick={closeNavList} className='nav__link'>
+            Capabilities
+          </a>
+        </li>
+        <li>
+          <a href='#about' onClick={closeNavList} className='nav__link'>
+            About
+          </a>
+        </li>
+        <li>
+          <a href='#contact' onClick={closeNavList} className='nav__link'>
+            Contact
+          </a>
+        </li>
+        {about.resume && (
+          <li>
             <a
-              href='#projects'
-              onClick={toggleNavList}
-              className='link link--nav'
+              href={about.resume}
+              target='_blank'
+              rel='noopener noreferrer'
+              onClick={closeNavList}
+              className='nav__link--resume'
             >
-              Projects
+              <span>Résumé</span>
+              <LaunchIcon style={{ fontSize: '0.85rem' }} />
             </a>
           </li>
-        ) : null}
-
-        {skills.length ? (
-          <li className='nav__list-item'>
-            <a
-              href='#skills'
-              onClick={toggleNavList}
-              className='link link--nav'
-            >
-              Skills
-            </a>
-          </li>
-        ) : null}
-
-        {contact.email ? (
-          <li className='nav__list-item'>
-            <a
-              href='#contact'
-              onClick={toggleNavList}
-              className='link link--nav'
-            >
-              Contact
-            </a>
-          </li>
-        ) : null}
+        )}
       </ul>
 
       <button
         type='button'
         onClick={toggleTheme}
-        className='btn btn--icon nav__theme'
-        aria-label='toggle theme'
+        className='nav__theme-btn'
+        aria-label={`Switch to ${themeName === 'dark' ? 'light' : 'dark'} mode`}
+        title={`Switch to ${themeName === 'dark' ? 'light' : 'dark'} mode`}
       >
-        {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
+        {themeName === 'dark' ? (
+          <WbSunnyRoundedIcon style={{ fontSize: '1.15rem' }} />
+        ) : (
+          <Brightness2Icon style={{ fontSize: '1.15rem' }} />
+        )}
       </button>
 
       <button
         type='button'
         onClick={toggleNavList}
-        className='btn btn--icon nav__hamburger'
-        aria-label='toggle navigation'
+        className='nav__hamburger-btn'
+        aria-label={showNavList ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={showNavList}
+        aria-controls='primary-navigation'
       >
         {showNavList ? <CloseIcon /> : <MenuIcon />}
       </button>
